@@ -17,7 +17,7 @@ app.use((req, res, next) => {
   next()
 })
 
-const cors = require(cors())
+app.use(cors())
 
 app.use(
   '/files',
