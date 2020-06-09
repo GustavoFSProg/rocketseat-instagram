@@ -1,9 +1,9 @@
+const dotenv = require('dotenv')
+const cors = require('cors')
 const express = require('express')
 const routes = require('./routes')
 const mongoose = require('mongoose')
-const dotenv = require('dotenv')
 const path = require('path')
-const cors = require('cors')
 
 dotenv.config()
 
@@ -19,6 +19,7 @@ app.use((req, res, next) => {
   next()
 })
 
+app.use(express.json())
 app.use(cors())
 
 app.use(
