@@ -13,7 +13,7 @@ if (port == null || port === '') {
   port = 8000
 }
 
-const DB = mongoose.connect(process.env.mongoDB, {
+mongoose.connect(process.env.mongoDB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
