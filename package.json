@@ -5,12 +5,16 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon  src/index.js",
-    "start": "NODE_ENV=production node dist"
+    "start": "NODE_ENV=production node dist",
+    "build": "babel src -d dist"
   },
   "engines": {
     "node": "v12.x"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-node": "^0.0.1-security",
+    "babel-preset-env": "^1.7.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
