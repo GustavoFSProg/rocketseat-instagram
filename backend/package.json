@@ -4,11 +4,20 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon  src/index.js"
+    "dev": "nodemon  src/index.js",
+    "start": "node  src/index.js"
+
+  },
+  "engines":{
+    "node":"v12.x"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.9.18",
-    "nodemon": "^2.0.4"
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4",
+    "sharp": "^0.25.3",
+    "socket.io": "^2.3.0"
   }
 }
