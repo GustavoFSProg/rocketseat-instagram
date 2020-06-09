@@ -13,12 +13,12 @@ if (port == null || port === '') {
   port = 8000
 }
 
-mongoose.connect(process.env.mongoDB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-})
+// mongoose.connect(process.env.mongoDB, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false,
+// })
 const app = express()
 
 const server = require('http').Server(app)
