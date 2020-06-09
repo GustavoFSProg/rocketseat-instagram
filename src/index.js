@@ -8,7 +8,12 @@ const path = require('path')
 dotenv.config()
 
 const app = express()
-const DB = mongoose.connect(process.env.mongoDB)
+const DB = mongoose.connect(process.env.mongoDB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+})
 
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
