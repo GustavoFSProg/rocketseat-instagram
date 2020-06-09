@@ -1,12 +1,14 @@
 const express = require('express')
 const routes = require('./routes')
 const mongoose = require('mongoose')
-const mongoDB = require('../config')
+const dotenv = require('dotenv')
 const path = require('path')
 const cors = require('cors')
 
+dotenv.config()
+
 const app = express()
-const DB = mongoose.connect(mongoDB)
+const DB = mongoose.connect(process.env.mongoDB)
 
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
