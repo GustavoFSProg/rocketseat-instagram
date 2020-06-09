@@ -7,6 +7,12 @@ const path = require('path')
 
 dotenv.config()
 
+let port = process.env.PORT
+
+if (port == null || port === '') {
+  port = 8000
+}
+
 const app = express()
 const DB = mongoose.connect(process.env.mongoDB, {
   useNewUrlParser: true,
@@ -33,6 +39,6 @@ app.use(
 )
 app.use(require('./routes'))
 
-server.listen(3000)
+server.listen(port)
 
 console.log('API Running at port 3000')
