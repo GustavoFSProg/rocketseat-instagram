@@ -10,9 +10,9 @@ const upload = multer(uploadsConfig);
 
 const routes = new express.Router();
 
+routes.get('/', postController.getAll);
 routes.post('/posts', upload.single('image'), postController.store);
 routes.get('/posts', postController.index);
-routes.get('/', postController.getAll);
 
 routes.post('/posts/:id/like', likeController.store);
 
