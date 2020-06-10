@@ -7,18 +7,19 @@ const path = require('path')
 
 dotenv.config()
 
-let port = process.env.PORT
+const { PORT } = process.env
 
-if (port == null || port === '') {
-  port = 8000
+if (PORT == null || PORT === '') {
+  PORT = 8000
 }
 
-// mongoose.connect(process.env.mongoDB, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useCreateIndex: true,
-//   useFindAndModify: false,
-// })
+mongoose.connect(process.env.mongoDB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+})
+
 const app = express()
 
 const server = require('http').Server(app)
@@ -32,13 +33,13 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 app.use(cors())
-app.use(routes)
+app.use('/', routes)
 
 app.use(
   '/files',
   express.static(path.resolve(__dirname, '..', 'uploads', 'resized'))
 )
 
-server.listen(port)
+server.listen(PORT)
 
 console.log('API Running at port 3000')
