@@ -1,7 +1,8 @@
 const dotenv = require('dotenv')
 const cors = require('cors')
+const config = require('../src/config/upload')
 const express = require('express')
-const routes = require('./routes')
+const routes = require('../src/routes')
 const mongoose = require('mongoose')
 const path = require('path')
 
