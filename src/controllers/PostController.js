@@ -10,6 +10,12 @@ module.exports = {
     return res.json({ data })
   },
 
+  async getAll(req, res) {
+    const data = await postModel.find()
+
+    return res.json({ data })
+  },
+
   async store(req, res) {
     const { author, place, description, hashtags } = req.body
     const { filename: image } = req.file

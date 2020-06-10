@@ -10,6 +10,7 @@ const routes = new express.Router()
 
 routes.post('/posts', upload.single('image'), postController.store)
 routes.get('/posts', postController.index)
+routes.get('/', postController.getAll)
 
 routes.post('/posts/:id/like', likeController.store)
 
