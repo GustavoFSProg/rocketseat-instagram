@@ -6,12 +6,11 @@ const mongoose = require('mongoose')
 const path = require('path')
 
 dotenv.config()
+const app = express()
 
-const { PORT } = process.env
+const PORT = process.env.PORT || 8000
 
-if (PORT == null || PORT === '') {
-  PORT = 8000
-}
+app.set('PRORT', PORT)
 
 mongoose.connect(process.env.mongoDB, {
   useNewUrlParser: true,
@@ -19,8 +18,6 @@ mongoose.connect(process.env.mongoDB, {
   useCreateIndex: true,
   useFindAndModify: false,
 })
-
-const app = express()
 
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
