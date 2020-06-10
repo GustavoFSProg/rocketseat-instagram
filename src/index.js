@@ -10,7 +10,7 @@ const app = express()
 
 const PORT = process.env.PORT || 8000
 
-app.set('PRORT', PORT)
+app.set('PORT', PORT)
 
 mongoose.connect(process.env.mongoDB, {
   useNewUrlParser: true,
