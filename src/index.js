@@ -8,10 +8,10 @@ const path = require('path')
 
 dotenv.config()
 const app = express()
+app.use(express.json())
+app.use(cors())
 
-const PORT = process.env.PORT || 8000
-
-app.set('PORT', PORT)
+const { PORT } = process.env
 
 mongoose.connect(process.env.mongoDB, {
   useNewUrlParser: true,
@@ -29,8 +29,6 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use(express.json())
-app.use(cors())
 app.use('/', routes)
 
 app.use(
