@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon  src/index.js",
+    "dev": "NODE_ENV=development nodemon --exec babel-node src/index.js",
     "start": "NODE_ENV=production node dist",
     "build": "babel src -d dist"
   },

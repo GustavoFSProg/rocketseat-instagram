@@ -38,4 +38,4 @@ app.use(
 
 server.listen(PORT)
 
-console.log('API Running at port 3000')
+console.log(`API Running at port ${PORT}`)
