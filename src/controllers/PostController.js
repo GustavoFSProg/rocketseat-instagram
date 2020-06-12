@@ -7,13 +7,13 @@ module.exports = {
   async index(req, res) {
     const data = await postModel.find().sort('-createdAt')
 
-    return res.json({ data })
+    return res.send(data)
   },
 
   async getAll(req, res) {
     const data = await postModel.find()
 
-    return res.json({ data })
+    return res.send({ data })
   },
 
   async store(req, res) {
